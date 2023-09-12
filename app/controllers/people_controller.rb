@@ -39,6 +39,11 @@ class PeopleController < ApplicationController
     head :no_content
   end
 
+  def find_by_name
+    @people = Person.where(name: params[:name])
+    render json: @people
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person

@@ -36,6 +36,7 @@ class PeopleController < ApplicationController
   # DELETE /people/1
   def destroy
     @person.destroy
+    head :no_content
   end
 
   private

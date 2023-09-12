@@ -41,7 +41,11 @@ class PeopleController < ApplicationController
 
   def find_by_name
     @people = Person.where(name: params[:name])
-    render json: @people
+    if @people.empty?
+      render json: { error: "Person not found" }, status: :not_found
+    else
+      render json: @people
+    end
   end
   
   private

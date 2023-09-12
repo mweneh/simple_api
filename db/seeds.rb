@@ -9,5 +9,5 @@ require 'faker'
 
 # Generate and print 10 random names
 10.times do
-  people = Person.create(Faker::Name.name)
+  people = Person.create(name: Faker::Name.name)
 end
